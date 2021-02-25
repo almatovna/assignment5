@@ -7,7 +7,10 @@ public class Employee {
     private String hireDate;
     private int salary;
 
-    public Employee(){}
+    public Employee(String name, String surname){
+        setName(name);
+        setSurname(surname);
+    }
     public Employee(String name, String surname, String hireDate, int salary){
         setName(name);
         setSurname(surname);

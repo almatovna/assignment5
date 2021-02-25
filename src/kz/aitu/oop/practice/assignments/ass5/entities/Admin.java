@@ -9,6 +9,11 @@ public class Admin extends Employee {
         setPosition(position);
         setDuties(duties);
     }
+    public Admin (int id, String name, String surname, String hireDate, int salary, String position, String duties){
+        super(id, name, surname, hireDate, salary);
+        setPosition(position);
+        setDuties(duties);
+    }
     public String getPosition() {
         return position;
     }
