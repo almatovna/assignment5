@@ -1,9 +1,5 @@
 package kz.aitu.oop.practice.assignments.ass5.controllers;
 
-import kz.aitu.oop.practice.assignments.ass5.entities.Admin;
-import kz.aitu.oop.practice.assignments.ass5.entities.Programmer;
-import kz.aitu.oop.practice.assignments.ass5.entities.Project;
-import kz.aitu.oop.practice.assignments.ass5.entities.TechStaff;
 import kz.aitu.oop.practice.assignments.ass5.repositories.interfaces.IEmployeeRepositories;
 
 import java.util.List;

@@ -1,16 +1,11 @@
 package kz.aitu.oop.practice.assignments.ass5.repositories;
 
 import kz.aitu.oop.practice.assignments.ass5.data.interfaces.IDB;
-import kz.aitu.oop.practice.assignments.ass5.entities.Admin;
-import kz.aitu.oop.practice.assignments.ass5.entities.Programmer;
-import kz.aitu.oop.practice.assignments.ass5.entities.Project;
-import kz.aitu.oop.practice.assignments.ass5.entities.TechStaff;
 import kz.aitu.oop.practice.assignments.ass5.repositories.interfaces.IEmployeeRepositories;
 
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class EmployeeRepositories implements IEmployeeRepositories {
     private final IDB db;
