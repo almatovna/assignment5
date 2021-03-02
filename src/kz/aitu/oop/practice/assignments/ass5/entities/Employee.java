@@ -4,25 +4,25 @@ public class Employee {
     private int id;
     private String name;
     private String surname;
+    private String status;
     private String hireDate;
-    private int salary;
 
     public Employee(String name, String surname){
         setName(name);
         setSurname(surname);
     }
-    public Employee(String name, String surname, String hireDate, int salary){
+    public Employee(String name, String surname, String status, String hireDate){
         setName(name);
         setSurname(surname);
+        setStatus(status);
         setHireDate(hireDate);
-        setSalary(salary);
     }
-    public Employee(int id, String name, String surname, String hireDate, int salary) {
+    public Employee(int id, String name, String surname, String status, String hireDate) {
         setId(id);
         setName(name);
         setSurname(surname);
+        setStatus(status);
         setHireDate(hireDate);
-        setSalary(salary);
     }
     public int getId() {
         return id;
@@ -42,27 +42,21 @@ public class Employee {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
     public String getHireDate() {
         return hireDate;
     }
     public void setHireDate(String hireDate) {
         this.hireDate = hireDate;
     }
-    public int getSalary() {
-        return salary;
-    }
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id= " + id +
-                ", name= '" + name + '\'' +
-                ", surname= '" + surname + '\'' +
-                ", hireDate= '" + hireDate + '\'' +
-                ", salary= " + salary +
-                '}';
+    public void getEmpInfo(){
+        System.out.println("Employee: " + getName() + " " + getSurname() + " with id " + getId());
+        System.out.println("Status: " + getStatus());
+        System.out.println("Hired date: " + getHireDate());
     }
 }
