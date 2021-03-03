@@ -3,6 +3,7 @@ package kz.aitu.oop.practice.assignments.ass5;
 import kz.aitu.oop.practice.assignments.ass5.controllers.EmployeeController;
 import kz.aitu.oop.practice.assignments.ass5.controllers.ManagerController;
 import kz.aitu.oop.practice.assignments.ass5.controllers.ProgrammersController;
+import kz.aitu.oop.practice.assignments.ass5.entities.Manager;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -42,6 +43,9 @@ public class MyApplication {
                 if(option==4){
                     total();
                 }
+                else {
+                    break;
+                }
 
             } catch (InputMismatchException e) {
                 System.out.println("Input must be integer!");
@@ -55,12 +59,10 @@ public class MyApplication {
         }
     public void manage(){
         while (true){
-            System.out.println("Select option: (1-5)");
+            System.out.println("Select option: (1-2)");
             System.out.println("1. Get all managers");
             System.out.println("2. Get manager by name");
-            System.out.println("3. Set deadline");
-            System.out.println("4. Set penalty");
-            System.out.println("5. Set bonus");
+            System.out.println("0. Exit");
             try {
                 System.out.println("Enter the option: ");
                 int option = scanner.nextInt();
@@ -70,14 +72,8 @@ public class MyApplication {
                 if(option==2){
                     getManagerByName();
                 }
-                if(option==3){
-
-                }
-                if(option==1){
-
-                }
-                if(option==1){
-
+                if(option==0){
+                    start();
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Input must be integer!");
@@ -88,8 +84,65 @@ public class MyApplication {
         }
     }
     public void program(){
+        while (true){
+            System.out.println("Select option: (1-3)");
+            System.out.println("1. Get all programmers");
+            System.out.println("2. Get programmer by name");
+            System.out.println("3. Get programmer by status");
+            System.out.println("0. Exit");
+            try {
+                System.out.println("Enter the option: ");
+                int option = scanner.nextInt();
+                if(option==1){
+                    getAllProgrammersMenu();
+                }
+                if(option==2){
+                    getProgrammerByName();
+                }
+                if(option==3){
+                    getProgrammerByStatus();
+                }
+                if(option==0){
+                    start();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Input must be integer!");
+                scanner.nextLine();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
     public void design(){
+        while (true){
+            System.out.println("Select option: (1-3)");
+            System.out.println("1. Get all designers");
+            System.out.println("2. Get designer by name");
+            System.out.println("3. Get designer by status");
+            System.out.println("0. Exit");
+            try {
+                System.out.println("Enter the option: ");
+                int option = scanner.nextInt();
+                if(option==1){
+                    getAllDesignersMenu();
+                }
+                if(option==2){
+                    getDesignerByName();
+                }
+                if(option==3){
+                    getDesignerByStatus();
+                }
+                if(option==0){
+                    start();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Input must be integer!");
+                scanner.nextLine();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
     }
     public void total(){
         String response = controller.totalCost();
@@ -100,16 +153,42 @@ public class MyApplication {
         System.out.println(response);
     }
     public void getManagerByName(){
-        System.out.println("Please enter name:");
-        String name = scanner.next();
-        System.out.println("Please enter surname:");
-        String surname = scanner.next();
-        String response = managerController.getManagerByName(name, surname);
+        String response = managerController.getManagerByName("Marcie", "Mogg");
+        System.out.println(response);
+        response = managerController.getManagerByName("Harald", "Godmer");
         System.out.println(response);
     }
-    public void setDeadline(){
-        System.out.println("Please enter day");
-        int day = scanner.nextInt();
-
+    public void getAllProgrammersMenu(){
+        String response = programmersController.getAllProgrammers();
+        System.out.println(response);
     }
+    public void getProgrammerByName(){
+        String response = programmersController.getProgrammerByName("Cary", "Vuitton");
+        System.out.println(response);
+        response = programmersController.getProgrammerByName("Cindelyn", "Scutter");
+        System.out.println(response);
+    }
+    public void getProgrammerByStatus(){
+        String response = programmersController.getProgrammerByStatus("Software Engineer III");
+        System.out.println(response);
+        response = programmersController.getProgrammerByStatus("Software Test Engineer II");
+        System.out.println(response);
+    }
+    public void getAllDesignersMenu() {
+        String response = programmersController.getAllDesigners();
+        System.out.println(response);
+    }
+    public void getDesignerByName() {
+        String response = programmersController.getDesignerByName("Minta", "Veschi");
+        System.out.println(response);
+        response = programmersController.getDesignerByName("Lorain", "Drayn");
+        System.out.println(response);
+    }
+    public void getDesignerByStatus() {
+        String response = programmersController.getProgrammerByStatus("Editor");
+        System.out.println(response);
+        response = programmersController.getDesignerByStatus("Programmer III");
+        System.out.println(response);
+    }
+
 }

@@ -45,4 +45,14 @@ public class Manager extends Employee implements INonProgrammer {
         Designer.bonus = bonus;
     }
 
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "name = " + super.getName() + " " +
+                "surname = " + super.getSurname() +
+                ", hired date = " + super.getHireDate() +
+                ", status = " + super.getStatus() +
+                ", salary=" + salary +
+                '}';
+    }
 }
